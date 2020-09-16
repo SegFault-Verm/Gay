@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    font-size: 22px;
+    height: 100%;
+    color: #FFF;
+    background-color: #2C2F33;
+}
+
+a {
+    color: lightblue;
+    text-decoration: none;
+}
