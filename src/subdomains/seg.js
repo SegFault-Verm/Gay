@@ -3,7 +3,7 @@ const htmlRedirect = require('../functions/redirect')
 
 const segRouter = express.Router()
 
-segRouter.get('/:param', (req, res) => {
+segRouter.get('/:param', async (req, res) => {
   if (req.params.param === 'favicon.ico') return
 
   const funDescriptions = [
@@ -18,7 +18,7 @@ segRouter.get('/:param', (req, res) => {
 
   const cdnFile = `https://im.slightly.gay/${req.params.param}`
 
-  const rebuildHead = `
+  const customMeta = `
     <title>Seg's Images</title>
     <meta name="title" content="Image">
     <meta property="og:type" content="website">
@@ -27,18 +27,20 @@ segRouter.get('/:param', (req, res) => {
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="${funDescriptions[Math.floor(Math.random() * funDescriptions.length)]}">
     <meta property="twitter:image" content="${cdnFile}">
-    <meta name="author" content="emilia repo">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="${cdnFile}">
 `
 
-  res.send(htmlRedirect({
+  const resp = await htmlRedirect({
     url: cdnFile,
     flag: 'bisexual',
-    redirectTime: 1500
-  }, rebuildHead))
+    redirectTime: 1500,
+    customMeta
+  }, req.headers)
+
+  res.send(resp)
 })
 
 module.exports = segRouter
