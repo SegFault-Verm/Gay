@@ -22,7 +22,7 @@ Custom image host for my .gay domain.
   ```js
   const subdomains = [
     alias: ['domain', 'domain2'], router: genRouter(options),
-  ]}
+  ]
   ```
   
   3. Merge request and contact me, I will need to add a cloudflare entry for it.
