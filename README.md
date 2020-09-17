@@ -21,7 +21,7 @@ Custom image host for my .gay domain.
 
   ```js
   const subdomains = [
-    alias: ['subdomain', 'subdomain2'], router: genRouter(options),
+    { alias: ['subdomain', 'subdomain2'], router: genRouter(options) },
   ]
   ```
   
