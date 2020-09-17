@@ -9,7 +9,7 @@ Custom image host for my .gay domain.
 
   ```js
   const options = {
-    url: "https://theredirecturl.com//", // (Required)
+    url: "https://theredirecturl.com/", // (Required)
     flag: "lgbt", // Or any of the flags in http://barchok.com/flags.html (Optional, defaults to white)"
     redirectTime: 3000 // Time on splash screen before redirecting (Optional, defaults to 3000ms),
     customMeta: `<title>Page Title</title><meta name="example" content="details">`
