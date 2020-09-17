@@ -21,11 +21,11 @@ const subdomains = [
     router: genRouter({ url: 'https://emialis.com', flag: 'nonbinary' })
   },
   {
-    alias: ['kevs'],
+    alias: ['kevs', 'kev.is'],
     router: genRouter({ url: 'https://steamcommunity.com/id/kevin1x', flag: 'lgbt' })
   },
   {
-    alias: ['vchamps'],
+    alias: ['vchamps', 'vchamp.is'],
     router: genRouter({ url: 'https://twitter.com/v_championssr', flag: 'bisexual' })
   },
   {

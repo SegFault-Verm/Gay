@@ -39,7 +39,6 @@ const htmlRedirect = async (options, headers) => {
   let newHead = null
   if (!options.customMeta) {
     const fetchedHTML = await fetchHTML(options.url, headers) // Get the html from the target site
-    console.log(fetchedHTML)
     newHead = rebuildMetaTags(getMeta(fetchedHTML)) // Transfer the altered meta tags from the target site
   }
 
