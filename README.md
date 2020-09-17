@@ -29,5 +29,5 @@ Custom image host for my .gay domain.
   
 **For more complex additions, such as custom routing, please add a file under `src/subdomains/` which exports your custom router, and then use:**
   ```js
-  const yourRouter = require('./subdomains/you');
+  const yourRouter = require('./subdomains/you')
   { alias: ['youralias'], router: yourRouter }
