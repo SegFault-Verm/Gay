@@ -7,6 +7,7 @@ const app = express()
 
 const globalRouter = express.Router()
 
+// Create all the routers for each of the aliases in subdomain.js.
 subdomains.forEach(obj => {
   obj.alias.forEach(a => {
     app.use(subdomain(a, obj.router))
@@ -27,4 +28,4 @@ app.use((err, req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, '/public/500.html'))
 })
 
-app.listen(80)
+app.listen(80) // 80?! Cloudflare is good sometimes.

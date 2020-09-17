@@ -2,6 +2,15 @@ const segRouter = require('./subdomains/seg')
 const express = require('express')
 const htmlRedirect = require('./functions/redirect')
 
+/**
+ * Creates an individual express router which catches all requests to / and redirects to the given site.
+ * @param options A set of options to be passed to htmlRedirect.
+ * @param options.url The url to redirect to.
+ * @param options.flag (optional) - The pride flag to use as the background (http://barchok.com/flags.html)
+ * @param {number} options.redirectTime (optional, default 3s) - The amount of time to wait before redirecting.
+ * @param options.customMeta - (optional) - A string of meta tags to inject manually. This will skip the process of fetching meta tags from the target site. Can technically be any <head> code.
+ * @return An express router.
+*/
 const genRouter = (options) => {
   const tmpRouter = express.Router()
   tmpRouter.get('/', async (req, res) => {

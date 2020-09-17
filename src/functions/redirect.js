@@ -1,6 +1,12 @@
 const https = require('https')
 const getMeta = require('lets-get-meta')
 
+/**
+ * Forwards the user's request to the page they're redirecting to, in order to grab some data about that page.
+ * @param {string} url The URL of the page to fetch.
+ * @param {Object} headers The HTTP headers, presumably provided forwareded from a request.
+ * @return {Promise} The HTML of the page.
+ */
 const fetchHTML = (url, headers) => {
   delete headers.host
   delete headers['accept-encoding']
@@ -20,6 +26,10 @@ const fetchHTML = (url, headers) => {
   })
 }
 
+/**
+ * @param {Object} tags An object to represent meta tags where each "key" is the name/property of the tag and each value is the content.
+ * @returns {string} A set of HTML meta tags, translated from the given input.
+ */
 const rebuildMetaTags = (tags) => {
   const vals = Object.entries(tags).filter(tag => tag[0] !== 'og:site_name')
   vals.push(['og:site_name', '(and that\'s  okay 🏳️‍🌈)']) // Inject leftist propaganda into the meta tags
