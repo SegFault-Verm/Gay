@@ -2,6 +2,12 @@ const subdomain = require('express-subdomain')
 const express = require('express')
 const subdomains = require('./subdomains')
 const path = require('path')
+const fs = require('fs')
+const https = require('https')
+const http = require('http')
+
+const key = fs.readFileSync('/etc/letsencrypt/live/is.slightly.gay/privkey.pem', 'utf-8')
+const cert = fs.readFileSync('/etc/letsencrypt/live/is.slightly.gay/fullchain.pem', 'utf-8')
 
 const app = express()
 
@@ -28,4 +34,9 @@ app.use((err, req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, '/public/500.html'))
 })
 
-app.listen(80) // 80?! Cloudflare is good sometimes.
+const httpsServer = https.createServer({ key, cert }, app)
+httpsServer.listen(443, () => console.log('Listening to https over port 443')).on('error', console.log)
+http.createServer((req, res) => {
+  res.writeHead(301, { Location: 'https://' + req.headers.host + req.url })
+  res.end()
+}).listen(80, () => console.log('Redirecting from http over port 80'))

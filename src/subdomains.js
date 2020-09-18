@@ -22,7 +22,7 @@ const genRouter = (options) => {
 
 const subdomains = [
   {
-    alias: ['segs', 'seg.is'],
+    alias: ['segs', 'seg.is', 'segfault.is'],
     router: segRouter
   },
   {
