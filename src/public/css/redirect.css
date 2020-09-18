@@ -16,24 +16,24 @@ body {
 }
 
 .container>.child {
-    width: 50%;
-    height: 100px;
+    width: 35%;
+    min-height: 100px;
+    min-width: 500px;
     border-radius: 10px;
     position: absolute;
     top: 30%;
     margin-top: -25px;
     background-color: #2C2F33;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     padding: 20px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .6), 0 0 2px 0 rgba(0, 0, 0, .5);
+    text-align: center;
+    color: #FFF;
+    word-wrap: break-word;
 }
 
-.container>.child>div {
+.container>.child > div {
     color: #FFF;
     width: 100%;
-    text-align: center;
 }
 
 a {
