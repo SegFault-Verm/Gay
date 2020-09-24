@@ -43,7 +43,7 @@ const subdomains = [
   },
   {
     alias: ['stellaris', 'stellaris.is', 'garden', 'garden.is'],
-    router: genRouter({ url: 'https://www.alyn.dev', flag: 'white'})
+    router: genRouter({ url: 'https://www.alyn.dev'})
   }
 ]
 
