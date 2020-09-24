@@ -40,6 +40,10 @@ const subdomains = [
   {
     alias: ['magiks', 'magik.is', 'magikmanz.is', 'magikmanz'],
     router: genRouter({ url: 'https://www.magikmanz.com/', flag: 'lgbt' })
+  },
+  {
+    alias: ['stellaris', 'stellaris.is', 'garden', 'garden.is'],
+    router: genRouter({ url: 'https://www.alyn.dev'})
   }
 ]
 
