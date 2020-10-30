@@ -6,8 +6,8 @@ const fs = require('fs')
 const https = require('https')
 const http = require('http')
 
-const key = fs.readFileSync('/etc/letsencrypt/live/is.slightly.gay/privkey.pem', 'utf-8')
-const cert = fs.readFileSync('/etc/letsencrypt/live/is.slightly.gay/fullchain.pem', 'utf-8')
+const key = fs.readFileSync('/etc/letsencrypt/live/slightly.gay/privkey.pem', 'utf-8')
+const cert = fs.readFileSync('/etc/letsencrypt/live/slightly.gay/fullchain.pem', 'utf-8')
 
 const app = express()
 
